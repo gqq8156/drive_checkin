@@ -53,7 +53,7 @@ const doTask = async (cloudClient) => {
   const { familyInfoResp } = await cloudClient.getFamilyList();
   if (familyInfoResp) {
     const family = familyInfoResp.find((f) => f.familyId == familyID) || familyInfoResp[0];
-    result.push(`${firstSpace}开始签到家庭云 ID: ${family.familyId}`);
+    //result.push(`${firstSpace}开始签到家庭云 ID: ${family.familyId}`);
     for (let m = 0; m < family_threadx; m++) {
       signPromises2.push((async () => {
         try {
@@ -205,7 +205,7 @@ const main = async () => {
       const { familyCapacityInfo: finalfamilyCapacityInfo } = await cloudClient.getUserSizeInfo();
     
       const capacityChange = finalfamilyCapacityInfo.totalSize - familyCapacitySize;
-      logger.log(`今天主账号${userNameInfo} 家庭+ ${capacityChange / 1024 / 1024}M \n`);
+      logger.log(`本次签到主号${userNameInfo} 家庭+ ${capacityChange / 1024 / 1024}M \n`);
        //输出主账号的个人空间和家庭空间
        const { cloudCapacityInfo, familyCapacityInfo } = await cloudClient.getUserSizeInfo();
        const personalTotalCapacity = (cloudCapacityInfo.totalSize / 1024 / 1024 / 1024).toFixed(2);  // 个人容量，单位 GB
