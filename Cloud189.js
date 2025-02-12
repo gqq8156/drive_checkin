@@ -206,7 +206,7 @@ const main = async () => {
     
       const capacityChange = finalfamilyCapacityInfo.totalSize - familyCapacitySize;
       logger.log(`今天主账号${userNameInfo} 家庭+ ${capacityChange / 1024 / 1024}M \n\n`);
-       输出主账号的个人空间和家庭空间
+       //输出主账号的个人空间和家庭空间
        const { cloudCapacityInfo, familyCapacityInfo } = await cloudClient.getUserSizeInfo();
        const personalTotalCapacity = (cloudCapacityInfo.totalSize / 1024 / 1024 / 1024).toFixed(2);  // 个人容量，单位 GB
        const familyTotalCapacity = (familyCapacityInfo.totalSize / 1024 / 1024 / 1024).toFixed(2);    // 家庭容量，单位 GB
