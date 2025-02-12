@@ -185,10 +185,10 @@ const main = async () => {
 
       //logger.log(
        // `${firstSpace}实际：个人+ ${(cloudCapacityInfo.totalSize - cloudCapacityInfo0.totalSize) / 1024 / 1024}M, 家庭+ ${(familyCapacityInfo.totalSize - familyCapacityInfo0.totalSize) / 1024 / 1024}M`
-      );
+     // );
      // logger.log(
        // `${firstSpace}个人总：${(cloudCapacityInfo.totalSize / 1024 / 1024 / 1024).toFixed(2)}G, 家庭总：${(familyCapacityInfo.totalSize / 1024 / 1024 / 1024).toFixed(2)}G`
-      );
+     // );
     } catch (e) {
       logger.error(e);
       if (e.code === "ETIMEDOUT") throw e;
